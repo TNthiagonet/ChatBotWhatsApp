@@ -36,4 +36,4 @@ node app.js
 https://lmstudio.ai/
 ```
 
-9- Baixe e instale em seu computador o lmstudio
+9- Baixe e instale o lmstudio em seu computador que irá rodar o serviço.

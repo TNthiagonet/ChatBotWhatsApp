@@ -35,9 +35,9 @@ wppconnect
   
   function start(client) {
     client.onMessage((message) => {
-      if (message.body === 'Hello') {
+      if (message.body === 'Hello','oi','olá') {
         client
-          .sendText(message.from, 'Hello, how I may help you?')
+          .sendText(message.from, 'Olá, seja bem vindo(a), com quem eu falo?')
           .then((result) => {
             console.log('Result: ', result); //return object success
           })
