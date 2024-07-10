@@ -1,2 +1,3 @@
-2024/07/10-08:51:13.771 64af Creating DB /home/thiagonet/Development/ChatBotWhatsApp/tokens/sessionName/Default/shared_proto_db/metadata since it was missing.
-2024/07/10-08:51:13.823 64af Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/sessionName/Default/shared_proto_db/metadata/MANIFEST-000001
+2024/07/10-09:13:06.479 8a07 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/sessionName/Default/shared_proto_db/metadata/MANIFEST-000001
+2024/07/10-09:13:06.479 8a07 Recovering log #3
+2024/07/10-09:13:06.480 8a07 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/sessionName/Default/shared_proto_db/metadata/000003.log 
