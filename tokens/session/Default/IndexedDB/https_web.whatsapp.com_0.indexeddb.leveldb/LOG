@@ -1,15 +1,15 @@
-2024/07/23-14:54:42.441 1b4d6 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/23-14:54:42.441 1b4d6 Recovering log #205
-2024/07/23-14:54:42.452 1b4d6 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000205.log 
-2024/07/23-14:54:43.502 1b4dc Level-0 table #211: started
-2024/07/23-14:54:43.511 1b4dc Level-0 table #211: 498469 bytes OK
-2024/07/23-14:54:43.513 1b4dc Delete type=0 #205
-2024/07/23-14:54:43.514 1b4d6 Manual compaction at level-0 from '\x007\x00\x00\x00' @ 72057594037927935 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/07/23-14:54:44.424 1b4d7 Compacting 1@1 + 2@2 files
-2024/07/23-14:54:44.457 1b4d7 Generated table #212@1: 58428 keys, 2223561 bytes
-2024/07/23-14:54:44.482 1b4d7 Generated table #213@1: 49376 keys, 1391917 bytes
-2024/07/23-14:54:44.482 1b4d7 Compacted 1@1 + 2@2 files => 3615478 bytes
-2024/07/23-14:54:44.483 1b4d7 compacted to: files[ 0 0 2 0 0 0 0 ]
-2024/07/23-14:54:44.484 1b4d7 Delete type=2 #207
-2024/07/23-14:54:44.484 1b4d7 Delete type=2 #211
-2024/07/23-14:54:44.484 1b4d7 Delete type=2 #208
+2024/07/23-15:16:03.507 1da2a Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/23-15:16:03.507 1da2a Recovering log #210
+2024/07/23-15:16:03.525 1da2a Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000210.log 
+2024/07/23-15:16:04.555 1da2a Level-0 table #216: started
+2024/07/23-15:16:04.565 1da2a Level-0 table #216: 780438 bytes OK
+2024/07/23-15:16:04.566 1da2a Delete type=0 #210
+2024/07/23-15:16:04.566 1da2a Manual compaction at level-0 from '\x009\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00:\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/23-15:16:05.446 1da2b Compacting 1@1 + 2@2 files
+2024/07/23-15:16:05.483 1da2b Generated table #217@1: 60828 keys, 2227031 bytes
+2024/07/23-15:16:05.510 1da2b Generated table #218@1: 50562 keys, 1491798 bytes
+2024/07/23-15:16:05.510 1da2b Compacted 1@1 + 2@2 files => 3718829 bytes
+2024/07/23-15:16:05.512 1da2b compacted to: files[ 0 0 2 0 0 0 0 ]
+2024/07/23-15:16:05.512 1da2b Delete type=2 #216
+2024/07/23-15:16:05.512 1da2b Delete type=2 #213
+2024/07/23-15:16:05.512 1da2b Delete type=2 #212

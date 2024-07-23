@@ -1,7 +1,7 @@
 {
   "name": "chatbotwhatsapp",
   "version": "1.0.0",
-  "description": "Bot de atendimento via Whatsapp",
+  "description": "Bot de atendimento via WhatsApp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -13,5 +13,8 @@
     "@wppconnect-team/wppconnect": "^1.32.3",
     "sharp": "^0.33.4",
     "winston": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
