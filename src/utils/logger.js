@@ -1,7 +1,9 @@
 const winston = require('winston');
 
+const logLevel = process.env.LOG_LEVEL || 'info'; // Nível de log configurável
+
 const logger = winston.createLogger({
-  level: 'info',
+  level: logLevel,
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.printf(({ timestamp, level, message }) => {
