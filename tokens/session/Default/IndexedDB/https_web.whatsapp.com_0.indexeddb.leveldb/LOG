@@ -1,0 +1,15 @@
+2024/07/23-13:21:42.145 117dd Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/23-13:21:42.145 117dd Recovering log #191
+2024/07/23-13:21:42.150 117dd Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000191.log 
+2024/07/23-13:21:43.217 117dd Level-0 table #197: started
+2024/07/23-13:21:43.221 117dd Level-0 table #197: 220309 bytes OK
+2024/07/23-13:21:43.222 117dd Delete type=0 #191
+2024/07/23-13:21:43.222 117dd Manual compaction at level-0 from '\x005\x00\x00\x00' @ 72057594037927935 : 1 .. '\x006\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/23-13:21:44.118 117de Compacting 1@1 + 2@2 files
+2024/07/23-13:21:44.152 117de Generated table #198@1: 55661 keys, 2220554 bytes
+2024/07/23-13:21:44.180 117de Generated table #199@1: 42529 keys, 1088973 bytes
+2024/07/23-13:21:44.180 117de Compacted 1@1 + 2@2 files => 3309527 bytes
+2024/07/23-13:21:44.182 117de compacted to: files[ 0 0 2 0 0 0 0 ]
+2024/07/23-13:21:44.182 117de Delete type=2 #197
+2024/07/23-13:21:44.182 117de Delete type=2 #194
+2024/07/23-13:21:44.182 117de Delete type=2 #193
