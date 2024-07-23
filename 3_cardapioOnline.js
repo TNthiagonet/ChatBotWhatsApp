@@ -1,60 +1,59 @@
 const { sendMainMenu, endService } = require('./index');
 
-const handleCardapioOnline = (message, client) => {
+// Função para lidar com o menu Cardápio Online
+const handleCardapioOnline = async (message, client) => {
   const userId = message.from;
 
   if (message.body === '0') {
-    sendMainMenu(message, client);
+    await sendMainMenu(message, client);
     return;
   }
 
   if (message.body.toLowerCase() === 'x') { // Inclui tanto 'x' quanto 'X'
-    endService(message, client);
+    await endService(message, client);
     return;
   }
 
   if (!global.context[userId] || global.context[userId] === 'cardapioOnline') {
     const menuText = `Você escolheu Cardápio Online. Aqui estão as opções disponíveis:\n\n` +
-                     `1️⃣ Informações sobre o serviço\n` +
-                     `2️⃣ Exemplos de cardápios online\n` +
-                     `3️⃣ Solicitar uma demonstração\n\n` +
+                     `A️⃣ Informações sobre o serviço\n` +
+                     `B️⃣ Exemplos de cardápios online\n` +
+                     `C️⃣ Contratar\n\n` +
                      `0️⃣ Voltar ao Menu Principal\n` +
                      `✖️ Finalizar Atendimento\n\n` +
                      `Digite a opção desejada.`;
 
-    client.sendText(userId, menuText);
+    await client.sendText(userId, menuText);
     global.context[userId] = 'cardapioOnline'; // Define o contexto atual para Cardápio Online
     return;
   }
 
-  if (message.body === '1') {
-    const responseText = `Aqui estão as informações sobre nossos cardápios online:\n\n` +
-                         `- Criação de cardápios digitais e interativos.\n` +
-                         `- Design otimizado para facilitar a visualização e navegação.\n` +
-                         `- Atualizações e integração com seu sistema de pedidos.\n\n` +
-                         `Para mais detalhes, entre em contato com nossa equipe.`;
-    client.sendText(userId, responseText);
-    return;
+  switch (message.body.toUpperCase()) {
+    case 'A':
+      const responseTextA = `Aqui estão as informações sobre nossos cardápios online:\n\n` +
+                            `- Criação de cardápios digitais para restaurantes e lanchonetes.\n` +
+                            `- Design responsivo e fácil de atualizar.\n` +
+                            `- Integração com sistemas de pedidos e pagamentos.\n\n` +
+                            `Para mais detalhes, entre em contato com nossa equipe.`;
+      await client.sendText(userId, responseTextA);
+      break;
+    case 'B':
+      const responseTextB = `Aqui estão alguns exemplos de cardápios online que criamos:\n\n` +
+                            `🌟 Exemplo 1: [https://restauranteexemplo1.com.br]\n` +
+                            `🚀 Exemplo 2: [https://restauranteexemplo2.com.br]\n\n` +
+                            `Se desejar mais exemplos, por favor, nos avise.`;
+      await client.sendText(userId, responseTextB);
+      break;
+    case 'C':
+      const responseTextC = `Para contratar nossos serviços de cardápio online, por favor, entre em contato com nossa equipe comercial:\n\n` +
+                            `📞 Telefone: [83 98179-0771]\n` +
+                            `📧 E-mail: [contato@thiagonet.com]\n\n` +
+                            `Estamos prontos para ajudá-lo a criar um cardápio online eficaz para seu negócio.`;
+      await client.sendText(userId, responseTextC);
+      break;
+    default:
+      await client.sendText(userId, 'Opção inválida. Por favor, escolha uma opção válida.');
   }
-
-  if (message.body === '2') {
-    const responseText = `Aqui estão alguns exemplos de cardápios online que criamos:\n\n` +
-                         `📜 Exemplo 1: [Link para exemplo]\n` +
-                         `🍽️ Exemplo 2: [Link para exemplo]\n\n` +
-                         `Se desejar mais exemplos, por favor, nos avise.`;
-    client.sendText(userId, responseText);
-    return;
-  }
-
-  if (message.body === '3') {
-    const responseText = `Você pode solicitar uma demonstração de cardápios online.\n\n` +
-                         `Por favor, forneça seu e-mail ou telefone para que nossa equipe entre em contato.`;
-    client.sendText(userId, responseText);
-    return;
-  }
-
-  client.sendText(userId, 'Opção inválida. Por favor, escolha uma opção válida.');
 };
 
-// Exporta a função
 module.exports = { handleCardapioOnline };

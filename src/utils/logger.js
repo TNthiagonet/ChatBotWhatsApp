@@ -1,18 +1,28 @@
-const winston = require('winston');
+const { createLogger, format, transports } = require('winston');
+const DailyRotateFile = require('winston-daily-rotate-file');
 
-const logLevel = process.env.LOG_LEVEL || 'info'; // Nível de log configurável
-
-const logger = winston.createLogger({
-  level: logLevel,
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.printf(({ timestamp, level, message }) => {
-      return `${timestamp} [${level}]: ${message}`;
-    })
+// Configuração do Logger
+const logger = createLogger({
+  level: 'info',
+  format: format.combine(
+    format.timestamp(),
+    format.json()
   ),
   transports: [
-    new winston.transports.File({ filename: 'combined.log' }),
-    new winston.transports.Console()
+    new transports.Console({
+      format: format.combine(
+        format.colorize(),
+        format.simple()
+      )
+    }),
+    new DailyRotateFile({
+      filename: 'application-%DATE%.log',
+      dirname: 'logs',
+      datePattern: 'YYYY-MM-DD',
+      zippedArchive: true,
+      maxSize: '20m',
+      maxFiles: '14d'
+    })
   ]
 });
 

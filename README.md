@@ -2,38 +2,57 @@
 
 Bot de atendimento via Whatsapp
 
-## Iniciando a criação
+## Requisitos
 
-1- Criando repositório no github
-2- Clonando repositório com vscode
-3- começando os comandos no terminal
+- [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm#installing-and-updating)
+- [LM Studio](https://lmstudio.ai/) para uso de IA local
 
-npm init -y
+## Instruções de Configuração
 
-4- Utilizando biblioteca wppconnect
+### 1. Criando o Repositório no GitHub
 
-```markdown
+1. Crie um novo repositório no GitHub.
+2. Clone o repositório usando o VSCode:
 
-https://github.com/wppconnect-team/wppconnect
+    ```bash
+    git clone <URL_DO_SEU_REPOSITORIO>
+    cd <NOME_DO_SEU_REPOSITORIO>
+    ```
 
-https://wppconnect.io/docs/tutorial/basics/installation
+### 2. Inicializando o Projeto
 
-```
+1. No terminal, dentro da pasta do projeto, execute:
 
-npm i --save @wppconnect-team/wppconnect
+    ```bash
+    npm init -y
+    ```
 
-5- Criando arquivo app.js dentro da pasta do projeto
+2. Adicione a biblioteca `wppconnect`:
 
-6- Utilizando codigo pronto da documentação
+    ```bash
+    npm install @wppconnect-team/wppconnect
+    ```
 
-7- Testando pelo terminal
+### 3. Configurando o Projeto
 
-node app.js
+1. Crie um arquivo chamado `app.js` dentro da pasta do projeto.
+2. Utilize o código fornecido na [documentação do wppconnect](https://wppconnect.io/docs/tutorial/basics/installation) para configurar o `app.js`.
 
-8- Utilizando IA local - ferramenta abaixo
+### 4. Testando o Projeto
 
-```markdown
-https://lmstudio.ai/
-```
+1. No terminal, execute:
 
-9- Baixe e instale o lmstudio em seu computador que irá rodar o serviço.
+    ```bash
+    node app.js
+    ```
+
+### 5. Utilizando IA Local
+
+1. Baixe e instale o [LM Studio](https://lmstudio.ai/) no computador que irá rodar o serviço.
+
+## Instalação e Uso
+
+### 1. Carregando o NVM no Shell
+
+```bash
+source ~/.nvm/nvm.sh

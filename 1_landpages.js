@@ -1,60 +1,49 @@
 const { sendMainMenu, endService } = require('./index');
+const { handleOptionA } = require('./1_A_landpages');
+const { handleOptionB } = require('./1_B_landpages');
+const { handleOptionC } = require('./1_C_landpages');
 
-const handleLandpages = (message, client) => {
+const handleLandpages = async (message, client) => {
   const userId = message.from;
 
   if (message.body === '0') {
-    sendMainMenu(message, client);
+    await sendMainMenu(message, client);
     return;
   }
 
-  if (message.body.toLowerCase() === 'x') { // Inclui tanto 'x' quanto 'X'
-    endService(message, client);
+  if (message.body.toLowerCase() === 'x') {
+    await endService(message, client);
     return;
   }
 
   if (!global.context[userId] || global.context[userId] === 'landpages') {
     const menuText = `Você escolheu Land Pages. Aqui estão as opções disponíveis:\n\n` +
-                     `1️⃣ Informações sobre o serviço\n` +
-                     `2️⃣ Exemplos de páginas de land page\n` +
-                     `3️⃣ Solicitar uma demonstração\n\n` +
+                     `A️ Informações sobre o serviço\n` +
+                     `B️ Exemplos de páginas de land page\n` +
+                     `C️ Contratar\n\n` +
                      `0️⃣ Voltar ao Menu Principal\n` +
                      `✖️ Finalizar Atendimento\n\n` +
                      `Digite a opção desejada.`;
 
-    client.sendText(userId, menuText);
+    await client.sendText(userId, menuText);
     global.context[userId] = 'landpages'; // Define o contexto atual para Land Pages
     return;
   }
 
-  if (message.body === '1') {
-    const responseText = `Aqui estão as informações sobre nossas land pages:\n\n` +
-                         `- Criação de páginas de captura e conversão.\n` +
-                         `- Design otimizado para gerar leads e conversões.\n` +
-                         `- Integração com ferramentas de marketing.\n\n` +
-                         `Para mais detalhes, entre em contato com nossa equipe.`;
-    client.sendText(userId, responseText);
-    return;
+  // Redireciona para o arquivo correspondente com base na escolha do submenu
+  switch (message.body.toUpperCase()) {
+    case 'A':
+      await handleOptionA(message, client);
+      break;
+    case 'B':
+      await handleOptionB(message, client);
+      break;
+    case 'C':
+      await handleOptionC(message, client);
+      break;
+    default:
+      await client.sendText(userId, 'Opção inválida. Por favor, escolha uma opção válida.');
   }
-
-  if (message.body === '2') {
-    const responseText = `Aqui estão alguns exemplos de land pages que criamos:\n\n` +
-                         `🌟 Exemplo 1: [Link para exemplo]\n` +
-                         `🚀 Exemplo 2: [Link para exemplo]\n\n` +
-                         `Se desejar mais exemplos, por favor, nos avise.`;
-    client.sendText(userId, responseText);
-    return;
-  }
-
-  if (message.body === '3') {
-    const responseText = `Você pode solicitar uma demonstração de nossas land pages.\n\n` +
-                         `Por favor, forneça seu e-mail ou telefone para que nossa equipe entre em contato.`;
-    client.sendText(userId, responseText);
-    return;
-  }
-
-  client.sendText(userId, 'Opção inválida. Por favor, escolha uma opção válida.');
 };
 
-// Exporta a função
 module.exports = { handleLandpages };

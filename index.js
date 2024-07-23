@@ -2,11 +2,25 @@ const wppconnect = require('@wppconnect-team/wppconnect');
 const fs = require('fs');
 const { logger } = require('./src/utils/logger');
 
-// Importar módulos dos menus
-const landpages = require('./1_landpages');
-const institucionais = require('./2_institucionais');
-const cardapioOnline = require('./3_cardapioOnline');
-const chatsDeAtendimento = require('./4_chatsDeAtendimento');
+// Importar módulos dos menus principais
+const { handleLandpages } = require('./1_landpages');
+const { handleInstitucionais } = require('./2_institucionais');
+const { handleCardapioOnline } = require('./3_cardapioOnline');
+const { handleChatsDeAtendimento } = require('./4_chatsDeAtendimento');
+
+// Importar módulos dos submenus
+const landpagesA = require('./1_A_landpages');
+const landpagesB = require('./1_B_landpages');
+const landpagesC = require('./1_C_landpages');
+const institucionaisA = require('./2_A_institucionais');
+const institucionaisB = require('./2_B_institucionais');
+const institucionaisC = require('./2_C_institucionais');
+const cardapioOnlineA = require('./3_A_cardapioOnline');
+const cardapioOnlineB = require('./3_B_cardapioOnline');
+const cardapioOnlineC = require('./3_C_cardapioOnline');
+const chatsDeAtendimentoA = require('./4_A_chatsDeAtendimento');
+const chatsDeAtendimentoB = require('./4_B_chatsDeAtendimento');
+const chatsDeAtendimentoC = require('./4_C_chatsDeAtendimento');
 
 // Contexto para armazenar o estado do menu do usuário
 global.context = {}; // Definido como global para que possa ser acessado em outros arquivos
@@ -57,24 +71,80 @@ const handleMenu = async (message, client) => {
   const context = global.context[message.from];
 
   try {
-    switch (context) {
-      case 'landpages':
-        await landpages.handleLandpages(message, client);
-        break;
-      case 'institucionais':
-        await institucionais.handleInstitucionais(message, client);
-        break;
-      case 'cardapioOnline':
-        await cardapioOnline.handleCardapioOnline(message, client);
-        break;
-      case 'chatsDeAtendimento':
-        await chatsDeAtendimento.handleChatsDeAtendimento(message, client);
-        break;
-      case 'main':
+    if (context === 'main') {
+      if (message.body === '1') {
+        global.context[message.from] = 'landpages';
+        await handleLandpages(message, client);
+      } else if (message.body === '2') {
+        global.context[message.from] = 'institucionais';
+        await handleInstitucionais(message, client);
+      } else if (message.body === '3') {
+        global.context[message.from] = 'cardapioOnline';
+        await handleCardapioOnline(message, client);
+      } else if (message.body === '4') {
+        global.context[message.from] = 'chatsDeAtendimento';
+        await handleChatsDeAtendimento(message, client);
+      } else {
         await sendMainMenu(message, client);
-        break;
-      default:
-        await sendMainMenu(message, client);
+      }
+    } else if (context === 'landpages') {
+      switch (message.body.toLowerCase()) {
+        case 'a':
+          await landpagesA.handleLandpagesA(message, client);
+          break;
+        case 'b':
+          await landpagesB.handleLandpagesB(message, client);
+          break;
+        case 'c':
+          await landpagesC.handleLandpagesC(message, client);
+          break;
+        default:
+          await handleLandpages(message, client);
+      }
+    } else if (context === 'institucionais') {
+      switch (message.body.toLowerCase()) {
+        case 'a':
+          await institucionaisA.handleInstitucionaisA(message, client);
+          break;
+        case 'b':
+          await institucionaisB.handleInstitucionaisB(message, client);
+          break;
+        case 'c':
+          await institucionaisC.handleInstitucionaisC(message, client);
+          break;
+        default:
+          await handleInstitucionais(message, client);
+      }
+    } else if (context === 'cardapioOnline') {
+      switch (message.body.toLowerCase()) {
+        case 'a':
+          await cardapioOnlineA.handleCardapioOnlineA(message, client);
+          break;
+        case 'b':
+          await cardapioOnlineB.handleCardapioOnlineB(message, client);
+          break;
+        case 'c':
+          await cardapioOnlineC.handleCardapioOnlineC(message, client);
+          break;
+        default:
+          await handleCardapioOnline(message, client);
+      }
+    } else if (context === 'chatsDeAtendimento') {
+      switch (message.body.toLowerCase()) {
+        case 'a':
+          await chatsDeAtendimentoA.handleChatsDeAtendimentoA(message, client);
+          break;
+        case 'b':
+          await chatsDeAtendimentoB.handleChatsDeAtendimentoB(message, client);
+          break;
+        case 'c':
+          await chatsDeAtendimentoC.handleChatsDeAtendimentoC(message, client);
+          break;
+        default:
+          await handleChatsDeAtendimento(message, client);
+      }
+    } else {
+      await sendMainMenu(message, client);
     }
   } catch (error) {
     logger.error('Erro ao manipular o menu:', error);
@@ -89,15 +159,7 @@ wppconnect.create().then(async (client) => {
     logMessageToFile(message);
 
     // Atualizar o contexto baseado na opção escolhida
-    if (message.body === '1') {
-      global.context[message.from] = 'landpages';
-    } else if (message.body === '2') {
-      global.context[message.from] = 'institucionais';
-    } else if (message.body === '3') {
-      global.context[message.from] = 'cardapioOnline';
-    } else if (message.body === '4') {
-      global.context[message.from] = 'chatsDeAtendimento';
-    } else if (message.body === '0') {
+    if (message.body === '0') {
       await sendMainMenu(message, client);
       return;
     } else if (message.body.toLowerCase() === 'x') {
@@ -107,4 +169,4 @@ wppconnect.create().then(async (client) => {
 
     await handleMenu(message, client);
   });
-}).catch((error) => logger.error(error));
+}).catch((error) => logger.error('Erro ao criar o cliente WPPConnect:', error));
