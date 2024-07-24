@@ -1,43 +1,12 @@
-const puppeteer = require('puppeteer-core'); // Use puppeteer-core para ambientes sem Chromium
-const chromium = require('chrome-aws-lambda'); // Importa chrome-aws-lambda
+const puppeteer = require('puppeteer');
 
-const addScriptWithRetry = async (page, path) => {
-  let retries = 3;
-  while (retries > 0) {
-    try {
-      await page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 5000 });
-      await page.addScriptTag({ path });
-      console.log('Script adicionado com sucesso!');
-      return;
-    } catch (error) {
-      console.error('Erro ao adicionar o script, tentando novamente...', error);
-      retries -= 1;
-      await delay(1000);
-    }
-  }
-  console.error('Falha ao adicionar o script após várias tentativas.');
-};
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-const startBrowser = async () => {
+(async () => {
   const browser = await puppeteer.launch({
-    args: chromium.args, // Utilize os argumentos do chrome-aws-lambda
-    executablePath: await chromium.executablePath, // Caminho do Chromium fornecido pelo chrome-aws-lambda
-    headless: chromium.headless, // Define o modo headless do chrome-aws-lambda
-    defaultViewport: chromium.defaultViewport, // Define o viewport padrão do chrome-aws-lambda
+    executablePath: '/path/to/chrome', // Substitua pelo caminho correto do Chrome
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
-  const page = await browser.newPage();
-  
-  // Utilize a função addScriptWithRetry quando necessário
-  await addScriptWithRetry(page, '/path/to/your/script.js');
-  
-  // Outras operações com o Puppeteer
+  // O resto do seu código aqui
 
-  // Fecha o navegador após completar as operações
   await browser.close();
-};
-
-// Inicia o navegador
-startBrowser().catch(console.error);
+})();
