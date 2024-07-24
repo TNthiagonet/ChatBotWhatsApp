@@ -1,30 +1,33 @@
-# Use a imagem base oficial do Node.js
-FROM node:20
+FROM node:19
 
-# Instale o Chrome
-RUN apt-get update && apt-get install -y \
-    wget \
-    gnupg \
-    && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list' \
-    && apt-get update \
-    && apt-get install -y google-chrome-stable \
-    && rm -rf /var/lib/apt/lists/*
-
-# Defina o diretório de trabalho
+# Cria o diretório de trabalho
 WORKDIR /app
 
-# Copie o package.json e o package-lock.json
+# Copia arquivos de dependências
 COPY package*.json ./
-
-# Instale as dependências
 RUN npm install
 
-# Copie o restante dos arquivos do projeto
+# Instala dependências necessárias para o Puppeteer
+RUN apt-get update && apt-get install -y \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libxss1 \
+    libxtst6 \
+    libappindicator3-1 \
+    libnspr4 \
+    libgbm1 \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copia o restante dos arquivos
 COPY . .
 
-# Exponha a porta se necessário
+# Expõe a porta
 EXPOSE 3000
 
-# Defina o comando para iniciar a aplicação
+# Comando para iniciar a aplicação
 CMD ["npm", "start"]

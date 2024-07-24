@@ -1,29 +1,25 @@
-const { logger } = require('./logger');
+// src/utils/menuUtils.js
 
-const sendMainMenu = async (message, client) => {
-  const menuText = `👤 Bem vindo(a) à ThiagoNET, Agência de Desenvolvimento.\n\n` +
-                   `Me diga qual destas opções abaixo melhor lhe atende.\n\n` +
-                   `❶ Land Pages\n` +
-                   `❷ Institucionais\n` +
-                   `❸ Cardápio Online\n` +
-                   `❹ Chats Inteligentes\n\n` +
-                   `Digite a opção desejada.`;
-
-  try {
-    await client.sendText(message.from, menuText);
-    global.context[message.from] = 'main'; // Define o contexto atual como Menu Principal
-  } catch (error) {
-    logger.error('Erro ao enviar menu principal:', error);
-  }
+/**
+ * Envia o menu principal para o número fornecido.
+ * @param {string} number - O número para o qual o menu principal será enviado.
+ */
+const sendMainMenu = (number) => {
+  // Lógica para enviar o menu principal
+  console.log(`Enviando menu principal para ${number}`);
 };
 
-const endService = async (message, client) => {
-  try {
-    await client.sendText(message.from, 'Atendimento Finalizado.');
-    delete global.context[message.from]; // Remove o contexto do usuário
-  } catch (error) {
-    logger.error('Erro ao finalizar o atendimento:', error);
-  }
+/**
+* Encerra o serviço para o número fornecido.
+* @param {string} number - O número para o qual o serviço será encerrado.
+*/
+const endService = (number) => {
+  // Lógica para encerrar o serviço
+  console.log(`Serviço encerrado para ${number}`);
 };
 
-module.exports = { sendMainMenu, endService };
+// Exporta as funções para que possam ser usadas em outros arquivos
+module.exports = {
+  sendMainMenu,
+  endService
+};
