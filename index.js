@@ -3,24 +3,24 @@ const fs = require('fs');
 const { logger } = require('./src/utils/logger');
 
 // Importar módulos dos menus principais
-const { landpages } = require('./1_landpages');
-const { institucionais } = require('./2_institucionais');
-const { cardapioOnline } = require('./3_cardapioOnline');
-const { chatsDeAtendimento } = require('./4_chatsDeAtendimento');
+const { landpages } = require('./src/1/1_landpages');
+const { institucionais } = require('./src/2/2_institucionais');
+const { cardapioOnline } = require('./src/3/3_cardapioOnline');
+const { chatsDeAtendimento } = require('./src/4/4_chatsDeAtendimento');
 
 // Importar módulos dos submenus
-const landpagesA = require('./1_A_landpages');
-const landpagesB = require('./1_B_landpages');
-const landpagesC = require('./1_C_landpages');
-const institucionaisA = require('./2_A_institucionais');
-const institucionaisB = require('./2_B_institucionais');
-const institucionaisC = require('./2_C_institucionais');
-const cardapioOnlineA = require('./3_A_cardapioOnline');
-const cardapioOnlineB = require('./3_B_cardapioOnline');
-const cardapioOnlineC = require('./3_C_cardapioOnline');
-const chatsDeAtendimentoA = require('./4_A_chatsDeAtendimento');
-const chatsDeAtendimentoB = require('./4_B_chatsDeAtendimento');
-const chatsDeAtendimentoC = require('./4_C_chatsDeAtendimento');
+const landpagesA = require('./src/1/A/1_A_landpages');
+const landpagesB = require('./src/1/B/1_B_landpages');
+const landpagesC = require('./src/1/C/1_C_landpages');
+const institucionaisA = require('./src/2/A/2_A_institucionais');
+const institucionaisB = require('./src/2/B/2_B_institucionais');
+const institucionaisC = require('./src/2/C/2_C_institucionais');
+const cardapioOnlineA = require('./src/3/A/3_A_cardapioOnline');
+const cardapioOnlineB = require('./src/3/B/3_B_cardapioOnline');
+const cardapioOnlineC = require('./src/3/C/3_C_cardapioOnline');
+const chatsDeAtendimentoA = require('./src/4/A/4_A_chatsDeAtendimento');
+const chatsDeAtendimentoB = require('./src/4/B/4_B_chatsDeAtendimento');
+const chatsDeAtendimentoC = require('./src/4/C/4_C_chatsDeAtendimento');
 
 // Contexto para armazenar o estado do menu do usuário
 global.context = {}; // Definido como global para que possa ser acessado em outros arquivos

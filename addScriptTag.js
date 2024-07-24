@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
-const { logger } = require('./src/utils/logger'); // Certifique-se de que o caminho está correto
+const { logger } = require('./src/utils/logger');
 
 /**
  * Adiciona uma tag de script à página.
@@ -9,15 +8,21 @@ const { logger } = require('./src/utils/logger'); // Certifique-se de que o cami
  */
 const addScriptTag = async (page, url) => {
   try {
-    // Certifique-se de que a página está carregada
-    await page.waitForSelector('body', { timeout: 30000 }); // Ajuste o seletor conforme necessário
+    // Aguardar o carregamento da página e a estabilidade
+    await page.waitForSelector('body', { timeout: 30000 });
 
-    // Adicione a tag do script
-    await page.addScriptTag({ url });
+    // Adicionar a tag do script
+    await page.evaluate((scriptUrl) => {
+      const script = document.createElement('script');
+      script.src = scriptUrl;
+      script.async = true;
+      document.head.appendChild(script);
+    }, url);
+    
     logger.info(`Tag de script adicionada: ${url}`);
   } catch (error) {
     logger.error('Erro ao adicionar a tag do script:', error);
-    throw error;
+    throw error; // Re-lançar o erro para tratamento adicional se necessário
   }
 };
 
@@ -28,18 +33,16 @@ const addScriptTag = async (page, url) => {
 const startBrowserAndAddScript = async (scriptUrl) => {
   let browser;
   try {
-    // Inicie o navegador
+    // Iniciar o navegador
     browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
-    // Ouça o evento 'load' para garantir que a página esteja carregada
-    page.on('load', async () => {
-      await addScriptTag(page, scriptUrl);
-    });
+    // Navegar para uma página específica ou criar uma página em branco
+    await page.goto('https://example.com'); // Substitua pela URL real se necessário
+    await page.waitForNavigation({ waitUntil: 'networkidle0' }); // Aguardar navegação e carregamento completo
 
-    // Navegue para uma página de exemplo (substitua pela sua URL)
-    await page.goto('https://example.com', { waitUntil: 'networkidle2' });
-
+    // Adicionar a tag do script após a página estar completamente carregada
+    await addScriptTag(page, scriptUrl);
   } catch (error) {
     logger.error('Erro ao iniciar o navegador ou adicionar o script:', error);
   } finally {
@@ -49,5 +52,5 @@ const startBrowserAndAddScript = async (scriptUrl) => {
   }
 };
 
-// Exemplo de uso
+// Exemplo de uso - Substitua pela URL real do script quando você souber
 startBrowserAndAddScript('https://example.com/script.js');

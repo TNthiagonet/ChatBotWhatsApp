@@ -1,9 +1,9 @@
-const { sendMainMenu, endService } = require('./index');
-const { instOptionA} = require('./2_A_institucionais');
-const { instOptionB } = require('./2_B_institucionais');
-const { instOptionC } = require('./2_C_institucionais');
+const { sendMainMenu, endService } = require('../../index');
+const { chatOptionA } = require('./A/4_A_chatsDeAtendimento');
+const { chatOptionB } = require('./B/4_B_chatsDeAtendimento');
+const { chatOptionC } = require('./C/4_C_chatsDeAtendimento');
 
-const institucionais = async (message, client) => {
+const chatsDeAtendimento = async (message, client) => {
   const userId = message.from;
 
   if (message.body.toLowerCase() === 'x') {
@@ -16,34 +16,34 @@ const institucionais = async (message, client) => {
     return;
   }
 
-  if (!global.context[userId] || global.context[userId] === 'institucionais') {
-    const menuText = `Você escolheu Institucionais. Aqui estão as opções disponíveis:\n\n` +
+  if (!global.context[userId] || global.context[userId] === 'chatsDeAtendimento') {
+    const menuText = `Você escolheu Chats de Atendimento. Aqui estão as opções disponíveis:\n\n` +
                      `ⓐ Informações sobre o serviço\n` +
-                     `ⓑ Exemplos de páginas institucionais\n` +
+                     `ⓑ Exemplos de chats de atendimento\n` +
                      `ⓒ Contratar\n\n` +
                      `ⓜ Voltar ao Menu Principal\n` +
                      `ⓧ Finalizar Atendimento\n\n` +
                      `Digite a opção desejada.`;
 
     await client.sendText(userId, menuText);
-    global.context[userId] = 'institucionais'; // Define o contexto atual para Institucionais
+    global.context[userId] = 'chatsDeAtendimento'; // Define o contexto atual para Chats de Atendimento
     return;
   }
 
   // Redireciona para o arquivo correspondente com base na escolha do submenu
   switch (message.body.toUpperCase()) {
     case 'A':
-      await instOptionA(message, client);
+      await chatOptionA(message, client);
       break;
     case 'B':
-      await instOptionB(message, client);
+      await chatOptionB(message, client);
       break;
     case 'C':
-      await instOptionC(message, client);
+      await chatOptionC(message, client);
       break;
     default:
       await client.sendText(userId, 'Opção inválida. Por favor, escolha uma opção válida.');
   }
 };
 
-module.exports = { institucionais };
+module.exports = { chatsDeAtendimento };

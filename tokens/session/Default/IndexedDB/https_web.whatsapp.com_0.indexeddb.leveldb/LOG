@@ -1,17 +1,19 @@
-2024/07/23-21:38:11.246 4ccc9 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/23-21:38:11.247 4ccc9 Recovering log #473
-2024/07/23-21:38:11.272 4ccc9 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000473.log 
-2024/07/23-21:38:12.284 4ccc9 Level-0 table #480: started
-2024/07/23-21:38:12.296 4ccc9 Level-0 table #480: 1150960 bytes OK
-2024/07/23-21:38:12.298 4ccc9 Delete type=0 #473
-2024/07/23-21:38:12.298 4ccc9 Manual compaction at level-0 from '\x00g\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00h\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/07/23-21:38:13.190 4ccca Compacting 1@1 + 3@2 files
-2024/07/23-21:38:13.229 4ccca Generated table #481@1: 86096 keys, 2234878 bytes
-2024/07/23-21:38:13.260 4ccca Generated table #482@1: 40403 keys, 2233810 bytes
-2024/07/23-21:38:13.286 4ccca Generated table #483@1: 63999 keys, 1616503 bytes
-2024/07/23-21:38:13.286 4ccca Compacted 1@1 + 3@2 files => 6085191 bytes
-2024/07/23-21:38:13.287 4ccca compacted to: files[ 0 0 3 0 0 0 0 ]
-2024/07/23-21:38:13.287 4ccca Delete type=2 #477
-2024/07/23-21:38:13.287 4ccca Delete type=2 #475
-2024/07/23-21:38:13.287 4ccca Delete type=2 #476
-2024/07/23-21:38:13.287 4ccca Delete type=2 #480
+2024/07/24-09:42:49.565 a0a8 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/24-09:42:49.566 a0a8 Recovering log #562
+2024/07/24-09:42:49.573 a0a8 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000562.log 
+2024/07/24-09:42:50.626 a0ab Level-0 table #570: started
+2024/07/24-09:42:50.632 a0ab Level-0 table #570: 362990 bytes OK
+2024/07/24-09:42:50.633 a0ab Delete type=0 #562
+2024/07/24-09:42:50.633 a0ab Manual compaction at level-0 from '\x00t\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00u\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/24-09:42:51.528 a0a9 Compacting 1@1 + 4@2 files
+2024/07/24-09:42:51.567 a0a9 Generated table #571@1: 86023 keys, 2234626 bytes
+2024/07/24-09:42:51.596 a0a9 Generated table #572@1: 48082 keys, 2245536 bytes
+2024/07/24-09:42:51.630 a0a9 Generated table #573@1: 70496 keys, 2228590 bytes
+2024/07/24-09:42:51.637 a0a9 Generated table #574@1: 15877 keys, 339352 bytes
+2024/07/24-09:42:51.637 a0a9 Compacted 1@1 + 4@2 files => 7048104 bytes
+2024/07/24-09:42:51.640 a0a9 compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/07/24-09:42:51.640 a0a9 Delete type=2 #564
+2024/07/24-09:42:51.640 a0a9 Delete type=2 #566
+2024/07/24-09:42:51.640 a0a9 Delete type=2 #570
+2024/07/24-09:42:51.640 a0a9 Delete type=2 #565
+2024/07/24-09:42:51.640 a0a9 Delete type=2 #567

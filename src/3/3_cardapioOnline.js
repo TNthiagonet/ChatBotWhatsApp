@@ -1,9 +1,9 @@
-const { sendMainMenu, endService } = require('./index');
-const { landOptionA } = require('./1_A_landpages');
-const { landOptionB } = require('./1_B_landpages');
-const { landOptionC } = require('./1_C_landpages');
+const { sendMainMenu, endService } = require('../../index');
+const { cardOptionA } = require('./A/3_A_cardapioOnline');
+const { cardOptionB } = require('./B/3_B_cardapioOnline');
+const { cardOptionC } = require('./C/3_C_cardapioOnline');
 
-const landpages = async (message, client) => {
+const cardapioOnline = async (message, client) => {
   const userId = message.from;
 
   if (message.body.toLowerCase() === 'x') {
@@ -16,34 +16,34 @@ const landpages = async (message, client) => {
     return;
   }
 
-  if (!global.context[userId] || global.context[userId] === 'landpages') {
-    const menuText = `Você escolheu Land Pages. Aqui estão as opções disponíveis:\n\n` +
+  if (!global.context[userId] || global.context[userId] === 'cardapioOnline') {
+    const menuText = `Você escolheu Cardápio Online. Aqui estão as opções disponíveis:\n\n` +
                      `ⓐ Informações sobre o serviço\n` +
-                     `ⓑ Exemplos de páginas de land page\n` +
+                     `ⓑ Exemplos de cardápios online\n` +
                      `ⓒ Contratar\n\n` +
                      `ⓜ Voltar ao Menu Principal\n` +
                      `ⓧ Finalizar Atendimento\n\n` +
                      `Digite a opção desejada.`;
 
     await client.sendText(userId, menuText);
-    global.context[userId] = 'landpages'; // Define o contexto atual para Land Pages
+    global.context[userId] = 'cardapioOnline'; // Define o contexto atual para Cardápio Online
     return;
   }
 
   // Redireciona para o arquivo correspondente com base na escolha do submenu
   switch (message.body.toUpperCase()) {
     case 'A':
-      await landOptionA(message, client);
+      await cardOptionA(message, client);
       break;
     case 'B':
-      await landOptionB(message, client);
+      await cardOptionB(message, client);
       break;
     case 'C':
-      await landOptionC(message, client);
+      await cardOptionC(message, client);
       break;
     default:
       await client.sendText(userId, 'Opção inválida. Por favor, escolha uma opção válida.');
   }
 };
 
-module.exports = { landpages };
+module.exports = { cardapioOnline };
