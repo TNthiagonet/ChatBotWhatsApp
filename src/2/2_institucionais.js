@@ -1,5 +1,5 @@
 const { sendMainMenu, endService } = require('../../index');
-const { instOptionA} = require('./A/2_A_institucionais');
+const { instOptionA } = require('./A/2_A_institucionais');
 const { instOptionB } = require('./B/2_B_institucionais');
 const { instOptionC } = require('./C/2_C_institucionais');
 
