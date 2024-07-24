@@ -31,4 +31,5 @@ logger.on('error', (err) => {
   console.error('Logging error:', err);
 });
 
+// Exportar o logger
 module.exports = { logger };
