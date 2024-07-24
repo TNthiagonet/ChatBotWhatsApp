@@ -8,13 +8,13 @@ const { logger } = require('./src/utils/logger');
  */
 const addScriptTag = async (page, url) => {
   try {
-    await page.waitForSelector('body', { timeout: 30000 });
+    await page.waitForSelector('body', { timeout: 30000 }); // Aguarda o corpo da página carregar
 
     await page.evaluate((scriptUrl) => {
       const script = document.createElement('script');
       script.src = scriptUrl;
       script.async = true;
-      document.head.appendChild(script);
+      document.head.appendChild(script); // Adiciona a tag de script ao cabeçalho
     }, url);
 
     logger.info(`Tag de script adicionada: ${url}`);
@@ -50,4 +50,5 @@ const startBrowserAndAddScript = async (scriptUrl) => {
   }
 };
 
+// Substitua a URL pelo endereço do seu script
 startBrowserAndAddScript('https://example.com/script.js');
