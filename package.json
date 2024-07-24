@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "vitest",
-    "postinstall": "npx puppeteer install"
+    "postinstall": "npx puppeteer install",
+    "check-chrome": "npx puppeteer --version"
   },
   "keywords": [],
   "author": "",
@@ -15,13 +16,13 @@
     "@wppconnect-team/wppconnect": "^1.32.4",
     "chrome-aws-lambda": "^9.1.0",
     "express": "^4.17.1",
+    "puppeteer": "^22.13.1",
     "puppeteer-core": "^9.1.1",
     "sharp": "^0.33.4",
     "winston": "^3.13.1",
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "puppeteer": "^22.13.1",
     "vitest": "^2.0.4"
   },
   "engines": {

@@ -27,6 +27,7 @@ const startBrowser = async () => {
     headless: chromium.headless, // Define o modo headless do chrome-aws-lambda
     defaultViewport: chromium.defaultViewport, // Define o viewport padrão do chrome-aws-lambda
   });
+
   const page = await browser.newPage();
   
   // Utilize a função addScriptWithRetry quando necessário

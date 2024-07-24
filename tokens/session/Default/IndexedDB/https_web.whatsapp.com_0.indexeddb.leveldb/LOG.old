@@ -1,72 +1,43 @@
-2024/07/24-19:36:10.318 5c3b9 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/24-19:36:10.318 5c3b9 Recovering log #1018
-2024/07/24-19:36:10.370 5c3b9 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/001018.log 
-2024/07/24-19:36:10.806 5c3ba Level-0 table #1024: started
-2024/07/24-19:36:10.824 5c3ba Level-0 table #1024: 994812 bytes OK
-2024/07/24-19:36:10.826 5c3ba Delete type=0 #1018
-2024/07/24-19:36:11.372 5c3b9 Level-0 table #1026: started
-2024/07/24-19:36:11.374 5c3b9 Level-0 table #1026: 4127 bytes OK
-2024/07/24-19:36:11.375 5c3b9 Delete type=0 #1023
-2024/07/24-19:36:11.375 5c3b9 Manual compaction at level-0 from '\x00\xbd\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xbe\x00\x00\x00' @ 0 : 0; will stop at '\x00\xbd\x00\x00\x05' @ 2976023 : 1
-2024/07/24-19:36:11.375 5c3b9 Compacting 1@0 + 1@1 files
-2024/07/24-19:36:11.392 5c3b9 Generated table #1027@0: 37195 keys, 572339 bytes
-2024/07/24-19:36:11.392 5c3b9 Compacted 1@0 + 1@1 files => 572339 bytes
-2024/07/24-19:36:11.393 5c3b9 compacted to: files[ 0 1 2 0 0 0 0 ]
-2024/07/24-19:36:11.393 5c3b9 Delete type=2 #1026
-2024/07/24-19:36:11.393 5c3b9 Manual compaction at level-0 from '\x00\xbd\x00\x00\x05' @ 2976023 : 1 .. '\x00\xbe\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/07/24-19:36:12.268 5c3ba Compacting 1@1 + 2@2 files
-2024/07/24-19:36:12.306 5c3ba Generated table #1028@1: 35033 keys, 2202090 bytes
-2024/07/24-19:36:12.329 5c3ba Generated table #1029@1: 45566 keys, 1151172 bytes
-2024/07/24-19:36:12.329 5c3ba Compacted 1@1 + 2@2 files => 3353262 bytes
-2024/07/24-19:36:12.332 5c3ba compacted to: files[ 0 0 2 0 0 0 0 ]
-2024/07/24-19:36:12.332 5c3ba Delete type=2 #1024
-2024/07/24-19:36:28.628 5c3b9 Level-0 table #1031: started
-2024/07/24-19:36:28.642 5c3b9 Level-0 table #1031: 1021208 bytes OK
-2024/07/24-19:36:28.643 5c3b9 Delete type=2 #1020
-2024/07/24-19:36:28.643 5c3b9 Delete type=2 #1021
-2024/07/24-19:36:28.643 5c3b9 Delete type=0 #1025
-2024/07/24-19:36:28.643 5c3b9 Delete type=2 #1027
-2024/07/24-19:36:28.647 5c3ba Compacting 1@1 + 2@2 files
-2024/07/24-19:36:28.677 5c3ba Generated table #1032@1: 36110 keys, 2202803 bytes
-2024/07/24-19:36:28.703 5c3ba Generated table #1033@1: 61210 keys, 1575502 bytes
-2024/07/24-19:36:28.703 5c3ba Compacted 1@1 + 2@2 files => 3778305 bytes
-2024/07/24-19:36:28.704 5c3ba compacted to: files[ 0 0 2 0 0 0 0 ]
-2024/07/24-19:36:28.704 5c3ba Delete type=2 #1029
-2024/07/24-19:36:28.704 5c3ba Delete type=2 #1031
-2024/07/24-19:36:28.704 5c3ba Delete type=2 #1028
-2024/07/24-19:36:43.953 5c3bc Level-0 table #1035: started
-2024/07/24-19:36:43.967 5c3bc Level-0 table #1035: 1013105 bytes OK
-2024/07/24-19:36:43.969 5c3bc Delete type=0 #1030
-2024/07/24-19:36:44.959 5c3bc Compacting 1@1 + 2@2 files
-2024/07/24-19:36:44.997 5c3bc Generated table #1036@1: 35924 keys, 2202492 bytes
-2024/07/24-19:36:45.029 5c3bc Generated table #1037@1: 78579 keys, 2033810 bytes
-2024/07/24-19:36:45.030 5c3bc Compacted 1@1 + 2@2 files => 4236302 bytes
-2024/07/24-19:36:45.031 5c3bc compacted to: files[ 0 0 2 0 0 0 0 ]
-2024/07/24-19:36:45.031 5c3bc Delete type=2 #1032
-2024/07/24-19:36:45.031 5c3bc Delete type=2 #1035
-2024/07/24-19:36:45.031 5c3bc Delete type=2 #1033
-2024/07/24-19:37:00.305 5c3b9 Level-0 table #1039: started
-2024/07/24-19:37:00.318 5c3b9 Level-0 table #1039: 981662 bytes OK
-2024/07/24-19:37:00.319 5c3b9 Delete type=0 #1034
-2024/07/24-19:37:01.315 5c3ba Compacting 1@1 + 2@2 files
-2024/07/24-19:37:01.349 5c3ba Generated table #1040@1: 35889 keys, 2202215 bytes
-2024/07/24-19:37:01.385 5c3ba Generated table #1041@1: 82146 keys, 2229619 bytes
-2024/07/24-19:37:01.392 5c3ba Generated table #1042@1: 15017 keys, 280870 bytes
-2024/07/24-19:37:01.392 5c3ba Compacted 1@1 + 2@2 files => 4712704 bytes
-2024/07/24-19:37:01.394 5c3ba compacted to: files[ 0 0 3 0 0 0 0 ]
-2024/07/24-19:37:01.394 5c3ba Delete type=2 #1039
-2024/07/24-19:37:01.394 5c3ba Delete type=2 #1036
-2024/07/24-19:37:01.394 5c3ba Delete type=2 #1037
-2024/07/24-19:37:18.484 5c3ba Level-0 table #1044: started
-2024/07/24-19:37:18.496 5c3ba Level-0 table #1044: 960289 bytes OK
-2024/07/24-19:37:18.498 5c3ba Delete type=0 #1038
-2024/07/24-19:37:18.771 5c3ba Compacting 1@1 + 3@2 files
-2024/07/24-19:37:18.801 5c3ba Generated table #1045@1: 35771 keys, 2201669 bytes
-2024/07/24-19:37:18.834 5c3ba Generated table #1046@1: 76253 keys, 2222725 bytes
-2024/07/24-19:37:18.848 5c3ba Generated table #1047@1: 35492 keys, 673798 bytes
-2024/07/24-19:37:18.848 5c3ba Compacted 1@1 + 3@2 files => 5098192 bytes
-2024/07/24-19:37:18.850 5c3ba compacted to: files[ 0 0 3 0 0 0 0 ]
-2024/07/24-19:37:18.850 5c3ba Delete type=2 #1044
-2024/07/24-19:37:18.850 5c3ba Delete type=2 #1041
-2024/07/24-19:37:18.850 5c3ba Delete type=2 #1040
-2024/07/24-19:37:18.851 5c3ba Delete type=2 #1042
+2024/07/24-19:38:09.386 5c964 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/24-19:38:09.386 5c964 Recovering log #1043
+2024/07/24-19:38:09.388 5c964 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/001043.log 
+2024/07/24-19:38:10.413 5c967 Level-0 table #1050: started
+2024/07/24-19:38:10.414 5c967 Level-0 table #1050: 61909 bytes OK
+2024/07/24-19:38:10.416 5c967 Delete type=0 #1043
+2024/07/24-19:38:10.416 5c964 Manual compaction at level-0 from '\x00\xbe\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xbf\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/24-19:38:11.448 5c965 Compacting 1@1 + 3@2 files
+2024/07/24-19:38:11.476 5c965 Generated table #1051@1: 35826 keys, 2201732 bytes
+2024/07/24-19:38:11.512 5c965 Generated table #1052@1: 75914 keys, 2220543 bytes
+2024/07/24-19:38:11.526 5c965 Generated table #1053@1: 36843 keys, 699645 bytes
+2024/07/24-19:38:11.526 5c965 Compacted 1@1 + 3@2 files => 5121920 bytes
+2024/07/24-19:38:11.528 5c965 compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/07/24-19:38:11.528 5c965 Delete type=2 #1046
+2024/07/24-19:38:11.528 5c965 Delete type=2 #1047
+2024/07/24-19:38:11.528 5c965 Delete type=2 #1045
+2024/07/24-19:38:11.528 5c965 Delete type=2 #1050
+2024/07/24-19:38:32.018 5c964 Level-0 table #1055: started
+2024/07/24-19:38:32.031 5c964 Level-0 table #1055: 1030968 bytes OK
+2024/07/24-19:38:32.033 5c964 Delete type=0 #1049
+2024/07/24-19:38:33.019 5c967 Compacting 1@1 + 3@2 files
+2024/07/24-19:38:33.055 5c967 Generated table #1056@1: 36467 keys, 2203344 bytes
+2024/07/24-19:38:33.086 5c967 Generated table #1057@1: 70247 keys, 2213249 bytes
+2024/07/24-19:38:33.130 5c967 Generated table #1058@1: 59154 keys, 1126395 bytes
+2024/07/24-19:38:33.130 5c967 Compacted 1@1 + 3@2 files => 5542988 bytes
+2024/07/24-19:38:33.132 5c967 compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/07/24-19:38:33.132 5c967 Delete type=2 #1052
+2024/07/24-19:38:33.132 5c967 Delete type=2 #1051
+2024/07/24-19:38:33.132 5c967 Delete type=2 #1053
+2024/07/24-19:38:33.132 5c967 Delete type=2 #1055
+2024/07/24-19:39:28.313 5c965 Level-0 table #1060: started
+2024/07/24-19:39:28.331 5c965 Level-0 table #1060: 1096695 bytes OK
+2024/07/24-19:39:28.333 5c965 Delete type=0 #1054
+2024/07/24-19:39:30.213 5c967 Compacting 1@1 + 3@2 files
+2024/07/24-19:39:30.307 5c967 Generated table #1061@1: 37200 keys, 2202804 bytes
+2024/07/24-19:39:30.338 5c967 Generated table #1062@1: 63773 keys, 2208328 bytes
+2024/07/24-19:39:30.364 5c967 Generated table #1063@1: 74851 keys, 1422710 bytes
+2024/07/24-19:39:30.364 5c967 Compacted 1@1 + 3@2 files => 5833842 bytes
+2024/07/24-19:39:30.366 5c967 compacted to: files[ 0 0 3 0 0 0 0 ]
+2024/07/24-19:39:30.366 5c967 Delete type=2 #1057
+2024/07/24-19:39:30.366 5c967 Delete type=2 #1058
+2024/07/24-19:39:30.366 5c967 Delete type=2 #1056
+2024/07/24-19:39:30.366 5c967 Delete type=2 #1060
