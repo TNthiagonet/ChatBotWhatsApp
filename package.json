@@ -13,8 +13,8 @@
   "dependencies": {
     "@wppconnect-team/wppconnect": "^1.32.4",
     "express": "^4.17.1",
-    "puppeteer-core": "^10.1.0",
-    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.4.0",
+    "chrome-aws-lambda": "^9.1.0",
     "sharp": "^0.33.4",
     "winston": "^3.13.1",
     "winston-daily-rotate-file": "^5.0.0"
