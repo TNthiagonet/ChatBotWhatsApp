@@ -1,7 +1,8 @@
-// 2_A_institucionais.js
-const handleInstitucionaisA = async (message, client) => {
-  const responseText = `Você escolheu a opção A dos Institucionais. Aqui estão as informações específicas sobre a opção A.`;
-  await client.sendText(message.from, responseText);
+const instOptionA = async (message, client) => {
+  const userId = message.from;
+  // Lógica para a opção A do submenu Land Pages
+  const responseText = 'Você escolheu a opção A em Institucionais. Aqui estão os detalhes...';
+  await client.sendText(userId, responseText);
 };
 
-module.exports = { handleInstitucionaisA };
+module.exports = { instOptionA };

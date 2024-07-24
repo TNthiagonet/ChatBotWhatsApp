@@ -1,7 +1,8 @@
-// 1_A_landpages.js
-const handleLandpagesA = async (message, client) => {
-  const responseText = `Você escolheu a opção A das Land Pages. Aqui estão as informações específicas sobre a opção A.`;
-  await client.sendText(message.from, responseText);
+const landOptionA = async (message, client) => {
+  const userId = message.from;
+  // Lógica para a opção A do submenu Land Pages
+  const responseText = 'Você escolheu a opção A em Land Pages. Aqui estão os detalhes...';
+  await client.sendText(userId, responseText);
 };
 
-module.exports = { handleLandpagesA };
+module.exports = { landOptionA };

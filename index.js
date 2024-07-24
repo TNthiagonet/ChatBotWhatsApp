@@ -3,10 +3,10 @@ const fs = require('fs');
 const { logger } = require('./src/utils/logger');
 
 // Importar módulos dos menus principais
-const { handleLandpages } = require('./1_landpages');
-const { handleInstitucionais } = require('./2_institucionais');
-const { handleCardapioOnline } = require('./3_cardapioOnline');
-const { handleChatsDeAtendimento } = require('./4_chatsDeAtendimento');
+const { landpages } = require('./1_landpages');
+const { institucionais } = require('./2_institucionais');
+const { cardapioOnline } = require('./3_cardapioOnline');
+const { chatsDeAtendimento } = require('./4_chatsDeAtendimento');
 
 // Importar módulos dos submenus
 const landpagesA = require('./1_A_landpages');
@@ -27,12 +27,12 @@ global.context = {}; // Definido como global para que possa ser acessado em outr
 
 // Função para enviar o menu principal
 const sendMainMenu = async (message, client) => {
-  const menuText = `Bem vindo(a) à ThiagoNET, Agência de Desenvolvimento.\n\n` +
+  const menuText = `👤 Bem vindo(a) à ThiagoNET, Agência de Desenvolvimento.\n\n` +
                    `Me diga qual destas opções abaixo melhor lhe atende.\n\n` +
-                   `1️⃣ Land Pages\n` +
-                   `2️⃣ Institucionais\n` +
-                   `3️⃣ Cardápio Online\n` +
-                   `4️⃣ Chats Inteligentes\n\n` +
+                   `❶ Land Pages\n` +
+                   `❷ Institucionais\n` +
+                   `❸ Cardápio Online\n` +
+                   `❹ Chats Inteligentes\n\n` +
                    `Digite a opção desejada.`;
 
   try {
@@ -72,76 +72,111 @@ const handleMenu = async (message, client) => {
 
   try {
     if (context === 'main') {
-      if (message.body === '1') {
-        global.context[message.from] = 'landpages';
-        await handleLandpages(message, client);
-      } else if (message.body === '2') {
-        global.context[message.from] = 'institucionais';
-        await handleInstitucionais(message, client);
-      } else if (message.body === '3') {
-        global.context[message.from] = 'cardapioOnline';
-        await handleCardapioOnline(message, client);
-      } else if (message.body === '4') {
-        global.context[message.from] = 'chatsDeAtendimento';
-        await handleChatsDeAtendimento(message, client);
-      } else {
-        await sendMainMenu(message, client);
+      switch (message.body) {
+        case '1':
+          global.context[message.from] = 'landpages';
+          await landpages(message, client);
+          break;
+        case '2':
+          global.context[message.from] = 'institucionais';
+          await institucionais(message, client);
+          break;
+        case '3':
+          global.context[message.from] = 'cardapioOnline';
+          await cardapioOnline(message, client);
+          break;
+        case '4':
+          global.context[message.from] = 'chatsDeAtendimento';
+          await chatsDeAtendimento(message, client);
+          break;
+        case '0':
+          await sendMainMenu(message, client);
+          break;
+        case 'x':
+          await endService(message, client);
+          break;
+        default:
+          await sendMainMenu(message, client);
       }
     } else if (context === 'landpages') {
       switch (message.body.toLowerCase()) {
         case 'a':
-          await landpagesA.handleLandpagesA(message, client);
+          await landpagesA.landOptionA(message, client);
           break;
         case 'b':
-          await landpagesB.handleLandpagesB(message, client);
+          await landpagesB.landOptionB(message, client);
           break;
         case 'c':
-          await landpagesC.handleLandpagesC(message, client);
+          await landpagesC.landOptionC(message, client);
+          break;
+        case 'm':
+          await sendMainMenu(message, client);
+          break;
+        case 'x':
+          await endService(message, client);
           break;
         default:
-          await handleLandpages(message, client);
+          await landpages(message, client);
       }
     } else if (context === 'institucionais') {
       switch (message.body.toLowerCase()) {
         case 'a':
-          await institucionaisA.handleInstitucionaisA(message, client);
+          await institucionaisA.instOptionA(message, client);
           break;
         case 'b':
-          await institucionaisB.handleInstitucionaisB(message, client);
+          await institucionaisB.instOptionB(message, client);
           break;
         case 'c':
-          await institucionaisC.handleInstitucionaisC(message, client);
+          await institucionaisC.instOptionC(message, client);
+          break;
+        case 'm':
+          await sendMainMenu(message, client);
+          break;
+        case 'x':
+          await endService(message, client);
           break;
         default:
-          await handleInstitucionais(message, client);
+          await institucionais(message, client);
       }
     } else if (context === 'cardapioOnline') {
       switch (message.body.toLowerCase()) {
         case 'a':
-          await cardapioOnlineA.handleCardapioOnlineA(message, client);
+          await cardapioOnlineA.cardOptionA(message, client);
           break;
         case 'b':
-          await cardapioOnlineB.handleCardapioOnlineB(message, client);
+          await cardapioOnlineB.cardOptionB(message, client);
           break;
         case 'c':
-          await cardapioOnlineC.handleCardapioOnlineC(message, client);
+          await cardapioOnlineC.cardOptionC(message, client);
+          break;
+        case 'm':
+          await sendMainMenu(message, client);
+          break;
+        case 'x':
+          await endService(message, client);
           break;
         default:
-          await handleCardapioOnline(message, client);
+          await cardapioOnline(message, client);
       }
     } else if (context === 'chatsDeAtendimento') {
       switch (message.body.toLowerCase()) {
         case 'a':
-          await chatsDeAtendimentoA.handleChatsDeAtendimentoA(message, client);
+          await chatsDeAtendimentoA.chatOptionA(message, client);
           break;
         case 'b':
-          await chatsDeAtendimentoB.handleChatsDeAtendimentoB(message, client);
+          await chatsDeAtendimentoB.chatOptionB(message, client);
           break;
         case 'c':
-          await chatsDeAtendimentoC.handleChatsDeAtendimentoC(message, client);
+          await chatsDeAtendimentoC.chatOptionC(message, client);
+          break;
+        case 'm':
+          await sendMainMenu(message, client);
+          break;
+        case 'x':
+          await endService(message, client);
           break;
         default:
-          await handleChatsDeAtendimento(message, client);
+          await chatsDeAtendimento(message, client);
       }
     } else {
       await sendMainMenu(message, client);
@@ -161,12 +196,10 @@ wppconnect.create().then(async (client) => {
     // Atualizar o contexto baseado na opção escolhida
     if (message.body === '0') {
       await sendMainMenu(message, client);
-      return;
     } else if (message.body.toLowerCase() === 'x') {
       await endService(message, client);
-      return;
+    } else {
+      await handleMenu(message, client);
     }
-
-    await handleMenu(message, client);
   });
 }).catch((error) => logger.error('Erro ao criar o cliente WPPConnect:', error));

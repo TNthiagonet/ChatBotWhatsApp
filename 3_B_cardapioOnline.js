@@ -1,7 +1,7 @@
-// 3_B_cardapioOnline.js
-const handleCardapioOnlineB = async (message, client) => {
-  const responseText = `Você escolheu a opção B do Cardápio Online. Aqui estão as informações específicas sobre a opção B.`;
-  await client.sendText(message.from, responseText);
+const cardOptionB = async (message, client) => {
+  const userId = message.from;
+  const responseText = 'Você escolheu a opção B em Cardápio. Aqui estão os detalhes...';
+  await client.sendText(userId, responseText);
 };
 
-module.exports = { handleCardapioOnlineB };
+module.exports = { cardOptionB };

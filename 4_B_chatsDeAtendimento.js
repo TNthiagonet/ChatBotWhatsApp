@@ -1,7 +1,7 @@
-// 4_B_chatsDeAtendimento.js
-const handleChatsDeAtendimentoB = async (message, client) => {
-  const responseText = `Você escolheu a opção B dos Chats Inteligentes. Aqui estão as informações específicas sobre a opção B.`;
-  await client.sendText(message.from, responseText);
+const chatOptionB = async (message, client) => {
+  const userId = message.from;
+  const responseText = 'Você escolheu a opção B em Chats. Aqui estão os detalhes...';
+  await client.sendText(userId, responseText);
 };
 
-module.exports = { handleChatsDeAtendimentoB };
+module.exports = { chatOptionB };
