@@ -1,5 +1,6 @@
 const wppconnect = require('@wppconnect-team/wppconnect');
 const fs = require('fs');
+const puppeteer = require('puppeteer'); // Importar Puppeteer
 const { logger } = require('./src/utils/logger');
 
 // Importar módulos dos menus principais
@@ -71,6 +72,7 @@ const addScriptWithRetry = async (page, path) => {
   let retries = 3; // Número de tentativas
   while (retries > 0) {
     try {
+      await page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 5000 });
       await page.addScriptTag({ path });
       console.log('Script adicionado com sucesso!');
       return; // Sai da função se bem-sucedido
