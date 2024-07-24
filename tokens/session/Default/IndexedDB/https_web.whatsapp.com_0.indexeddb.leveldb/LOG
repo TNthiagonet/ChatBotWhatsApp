@@ -1,19 +1,19 @@
-2024/07/24-09:42:49.565 a0a8 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/24-09:42:49.566 a0a8 Recovering log #562
-2024/07/24-09:42:49.573 a0a8 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000562.log 
-2024/07/24-09:42:50.626 a0ab Level-0 table #570: started
-2024/07/24-09:42:50.632 a0ab Level-0 table #570: 362990 bytes OK
-2024/07/24-09:42:50.633 a0ab Delete type=0 #562
-2024/07/24-09:42:50.633 a0ab Manual compaction at level-0 from '\x00t\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00u\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/07/24-09:42:51.528 a0a9 Compacting 1@1 + 4@2 files
-2024/07/24-09:42:51.567 a0a9 Generated table #571@1: 86023 keys, 2234626 bytes
-2024/07/24-09:42:51.596 a0a9 Generated table #572@1: 48082 keys, 2245536 bytes
-2024/07/24-09:42:51.630 a0a9 Generated table #573@1: 70496 keys, 2228590 bytes
-2024/07/24-09:42:51.637 a0a9 Generated table #574@1: 15877 keys, 339352 bytes
-2024/07/24-09:42:51.637 a0a9 Compacted 1@1 + 4@2 files => 7048104 bytes
-2024/07/24-09:42:51.640 a0a9 compacted to: files[ 0 0 4 0 0 0 0 ]
-2024/07/24-09:42:51.640 a0a9 Delete type=2 #564
-2024/07/24-09:42:51.640 a0a9 Delete type=2 #566
-2024/07/24-09:42:51.640 a0a9 Delete type=2 #570
-2024/07/24-09:42:51.640 a0a9 Delete type=2 #565
-2024/07/24-09:42:51.640 a0a9 Delete type=2 #567
+2024/07/24-09:53:49.795 b6de Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/24-09:53:49.796 b6de Recovering log #576
+2024/07/24-09:53:49.799 b6de Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000576.log 
+2024/07/24-09:53:50.821 b6e1 Level-0 table #584: started
+2024/07/24-09:53:50.826 b6e1 Level-0 table #584: 169940 bytes OK
+2024/07/24-09:53:50.827 b6e1 Delete type=0 #576
+2024/07/24-09:53:50.827 b6e1 Manual compaction at level-0 from '\x00v\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00w\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/24-09:53:51.859 b6df Compacting 1@1 + 4@2 files
+2024/07/24-09:53:51.905 b6df Generated table #585@1: 86385 keys, 2236509 bytes
+2024/07/24-09:53:51.946 b6df Generated table #586@1: 49297 keys, 2246234 bytes
+2024/07/24-09:53:51.977 b6df Generated table #587@1: 67750 keys, 2225982 bytes
+2024/07/24-09:53:51.985 b6df Generated table #588@1: 20126 keys, 419894 bytes
+2024/07/24-09:53:51.985 b6df Compacted 1@1 + 4@2 files => 7128619 bytes
+2024/07/24-09:53:51.986 b6df compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/07/24-09:53:51.986 b6df Delete type=2 #580
+2024/07/24-09:53:51.986 b6df Delete type=2 #578
+2024/07/24-09:53:51.986 b6df Delete type=2 #581
+2024/07/24-09:53:51.986 b6df Delete type=2 #584
+2024/07/24-09:53:51.986 b6df Delete type=2 #579
