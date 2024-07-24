@@ -18,7 +18,7 @@ const addScriptTag = async (page, url) => {
       script.async = true;
       document.head.appendChild(script);
     }, url);
-    
+
     logger.info(`Tag de script adicionada: ${url}`);
   } catch (error) {
     logger.error('Erro ao adicionar a tag do script:', error);
@@ -34,10 +34,11 @@ const startBrowserAndAddScript = async (scriptUrl) => {
   let browser;
   try {
     // Iniciar o navegador com a opção --no-sandbox
-    browser = await puppeteer.launch({ 
-      headless: true, 
-      args: ['--no-sandbox', '--disable-setuid-sandbox'] 
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
+
     const page = await browser.newPage();
 
     // Navegar para uma página específica ou criar uma página em branco
