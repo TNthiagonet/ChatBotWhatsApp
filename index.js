@@ -186,6 +186,7 @@ const handleMenu = async (message, client) => {
   }
 };
 
+// Iniciar o cliente WPPConnect
 wppconnect.create().then(async (client) => {
   await delay(5000); // Aguardar 5 segundos antes de prosseguir
 
