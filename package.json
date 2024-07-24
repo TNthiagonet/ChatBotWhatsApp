@@ -4,8 +4,7 @@
   "description": "Bot de atendimento via WhatsApp",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "npx chrome-aws-lambda install"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
