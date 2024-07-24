@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "test": "vitest",
     "postinstall": "npx puppeteer install"
   },
   "keywords": [],
@@ -12,14 +13,19 @@
   "license": "ISC",
   "dependencies": {
     "@wppconnect-team/wppconnect": "^1.32.4",
-    "express": "^4.17.1",
-    "puppeteer-core": "^10.4.0",
     "chrome-aws-lambda": "^9.1.0",
+    "express": "^4.17.1",
+    "puppeteer-core": "^9.1.1",
     "sharp": "^0.33.4",
     "winston": "^3.13.1",
     "winston-daily-rotate-file": "^5.0.0"
   },
+  "devDependencies": {
+    "puppeteer": "^22.13.1",
+    "vitest": "^2.0.4"
+  },
   "engines": {
     "node": ">=18.17.0"
-  }
+  },
+  "type": "module"
 }

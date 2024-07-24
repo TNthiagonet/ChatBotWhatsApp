@@ -1,5 +1,5 @@
-const puppeteer = require('puppeteer');
-const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core'); // Use puppeteer-core para ambientes sem Chromium
+const chromium = require('chrome-aws-lambda'); // Importa chrome-aws-lambda
 
 const addScriptWithRetry = async (page, path) => {
   let retries = 3;
@@ -22,8 +22,10 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const startBrowser = async () => {
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: chromium.args, // Utilize os argumentos do chrome-aws-lambda
+    executablePath: await chromium.executablePath, // Caminho do Chromium fornecido pelo chrome-aws-lambda
+    headless: chromium.headless, // Define o modo headless do chrome-aws-lambda
+    defaultViewport: chromium.defaultViewport, // Define o viewport padrão do chrome-aws-lambda
   });
   const page = await browser.newPage();
   
@@ -31,6 +33,10 @@ const startBrowser = async () => {
   await addScriptWithRetry(page, '/path/to/your/script.js');
   
   // Outras operações com o Puppeteer
+
+  // Fecha o navegador após completar as operações
+  await browser.close();
 };
 
-startBrowser();
+// Inicia o navegador
+startBrowser().catch(console.error);
