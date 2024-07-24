@@ -4,6 +4,7 @@
   "description": "Bot de atendimento via Whatsapp",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npx puppeteer-core install",
     "start": "node index.js"
   },
   "keywords": [],

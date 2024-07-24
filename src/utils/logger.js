@@ -26,4 +26,9 @@ const logger = createLogger({
   ]
 });
 
+// Manter o console.log para falhas de transporte.
+logger.on('error', (err) => {
+  console.error('Logging error:', err);
+});
+
 module.exports = { logger };
