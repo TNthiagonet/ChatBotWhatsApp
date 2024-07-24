@@ -1,14 +1,19 @@
-2024/07/24-16:12:48.757 3c113 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/24-16:12:48.758 3c113 Recovering log #785
-2024/07/24-16:12:48.760 3c113 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000785.log 
-2024/07/24-16:12:49.833 3c116 Level-0 table #793: started
-2024/07/24-16:12:49.837 3c116 Level-0 table #793: 154731 bytes OK
-2024/07/24-16:12:49.838 3c116 Delete type=0 #785
-2024/07/24-16:12:49.838 3c113 Manual compaction at level-0 from '\x00\x93\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x94\x00\x00\x00' @ 0 : 0; will stop at (end)
-2024/07/24-16:12:50.734 3c114 Compacting 1@1 + 4@2 files
-2024/07/24-16:12:50.769 3c114 Generated table #794@1: 85665 keys, 2234800 bytes
-2024/07/24-16:12:50.805 3c114 Generated table #795@1: 79589 keys, 2286342 bytes
-2024/07/24-16:12:50.829 3c114 Generated table #796@1: 21766 keys, 2181910 bytes
-2024/07/24-16:12:50.859 3c114 Generated table #797@1: 83434 keys, 1839601 bytes
-2024/07/24-16:12:50.859 3c114 Compacted 1@1 + 4@2 files => 8542653 bytes
-2024/07/24-16:12:50.861 3c114 compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/07/24-16:31:56.066 3f475 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/24-16:31:56.066 3f475 Recovering log #855
+2024/07/24-16:31:56.069 3f475 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000855.log 
+2024/07/24-16:31:57.093 3f477 Level-0 table #863: started
+2024/07/24-16:31:57.096 3f477 Level-0 table #863: 141138 bytes OK
+2024/07/24-16:31:57.098 3f477 Delete type=0 #855
+2024/07/24-16:31:57.098 3f475 Manual compaction at level-0 from '\x00\x9d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x9e\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/07/24-16:31:58.187 3f475 Compacting 1@1 + 4@2 files
+2024/07/24-16:31:58.228 3f475 Generated table #864@1: 85484 keys, 2235455 bytes
+2024/07/24-16:31:58.324 3f475 Generated table #865@1: 83627 keys, 2290344 bytes
+2024/07/24-16:31:58.349 3f475 Generated table #866@1: 25423 keys, 2187418 bytes
+2024/07/24-16:31:58.383 3f475 Generated table #867@1: 85223 keys, 2076320 bytes
+2024/07/24-16:31:58.383 3f475 Compacted 1@1 + 4@2 files => 8789537 bytes
+2024/07/24-16:31:58.385 3f475 compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/07/24-16:31:58.385 3f475 Delete type=2 #863
+2024/07/24-16:31:58.385 3f475 Delete type=2 #858
+2024/07/24-16:31:58.385 3f475 Delete type=2 #859
+2024/07/24-16:31:58.385 3f475 Delete type=2 #860
+2024/07/24-16:31:58.385 3f475 Delete type=2 #857

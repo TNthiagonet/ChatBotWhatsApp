@@ -66,6 +66,23 @@ const logMessageToFile = (message) => {
 // Função de delay
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+// Função para adicionar script com tentativas
+const addScriptWithRetry = async (page, path) => {
+  let retries = 3; // Número de tentativas
+  while (retries > 0) {
+    try {
+      await page.addScriptTag({ path });
+      console.log('Script adicionado com sucesso!');
+      return; // Sai da função se bem-sucedido
+    } catch (error) {
+      console.error('Erro ao adicionar o script, tentando novamente...', error);
+      retries -= 1; // Decrementa o número de tentativas restantes
+      await page.waitForTimeout(1000); // Aguarda antes de tentar novamente
+    }
+  }
+  console.error('Falha ao adicionar o script após várias tentativas.');
+};
+
 // Função para manipular menus baseados no contexto do usuário
 const handleMenu = async (message, client) => {
   const context = global.context[message.from];
