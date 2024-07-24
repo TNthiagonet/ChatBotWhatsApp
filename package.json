@@ -4,7 +4,8 @@
   "description": "Bot de atendimento via WhatsApp",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "npx chrome-aws-lambda install"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,8 @@
   "dependencies": {
     "@wppconnect-team/wppconnect": "^1.32.4",
     "express": "^4.17.1",
-    "puppeteer": "^22.13.1",
+    "puppeteer-core": "^22.13.1",
+    "chrome-aws-lambda": "^10.1.0",
     "sharp": "^0.33.4",
     "winston": "^3.13.1",
     "winston-daily-rotate-file": "^5.0.0"

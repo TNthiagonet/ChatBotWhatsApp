@@ -1,24 +1,29 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
+const chromium = require('chrome-aws-lambda');
 
 async function startBrowserAndAddScript() {
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
-
-  console.log('Navegando para a página...');
-  await page.goto('https://example.com'); // Substitua pela URL da sua página
-
-  // Espera até que um seletor específico esteja presente na página
-  await page.waitForSelector('body'); // Ajuste o seletor conforme necessário
-
   try {
-    console.log('Tentando adicionar o script...');
-    await page.addScriptTag({ path: 'localScript.js' }); // Ajuste o caminho do seu script local
-    console.log('Script adicionado com sucesso!');
-  } catch (error) {
-    console.error('Erro ao adicionar o script:', error);
-  }
+    console.log('Navegando para a página...');
+    const browser = await puppeteer.launch({
+      args: chromium.args,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+    });
 
-  await browser.close();
+    const page = await browser.newPage();
+    await page.goto('https://web.whatsapp.com', { waitUntil: 'networkidle2' });
+
+    // Aguardar o carregamento completo da página
+    await page.waitForTimeout(3000); // aguarda 3 segundos
+
+    console.log('Adicionando o script...');
+    const result = await page.addScriptTag({ path: 'localScript.js' });
+
+    console.log('Script adicionado com sucesso!');
+    await browser.close();
+  } catch (error) {
+    console.error('Erro ao iniciar o navegador ou adicionar o script:', error);
+  }
 }
 
 startBrowserAndAddScript();
