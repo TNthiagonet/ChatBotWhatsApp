@@ -1,3 +1,5 @@
-2024/07/24-11:30:56.482 4 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/Local Storage/leveldb/MANIFEST-000001
-2024/07/24-11:30:56.485 4 Recovering log #24
-2024/07/24-11:30:56.485 4 Reusing old log /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/Local Storage/leveldb/000024.log 
+2024/07/24-11:44:33.332 4 Reusing MANIFEST /home/thiagonet/Development/ChatBotWhatsApp/tokens/session/Default/Local Storage/leveldb/MANIFEST-000001
+2024/07/24-11:44:33.336 4 Recovering log #24
+2024/07/24-11:44:33.336 4 Level-0 table #26: started
+2024/07/24-11:44:33.339 4 Level-0 table #26: 12842 bytes OK
+2024/07/24-11:44:33.343 4 Delete type=0 #24
