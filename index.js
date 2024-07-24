@@ -187,7 +187,10 @@ const handleMenu = async (message, client) => {
 };
 
 // Iniciar o cliente WPPConnect
-wppconnect.create().then(async (client) => {
+wppconnect.create({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+}).then(async (client) => {
   await delay(5000); // Aguardar 5 segundos antes de prosseguir
 
   client.onMessage(async (message) => {
