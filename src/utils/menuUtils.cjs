@@ -1,5 +1,3 @@
-// src/utils/menuUtils.js
-
 /**
  * Envia o menu principal para o número fornecido.
  * @param {string} number - O número para o qual o menu principal será enviado.
@@ -10,9 +8,9 @@ const sendMainMenu = (number) => {
 };
 
 /**
-* Encerra o serviço para o número fornecido.
-* @param {string} number - O número para o qual o serviço será encerrado.
-*/
+ * Encerra o serviço para o número fornecido.
+ * @param {string} number - O número para o qual o serviço será encerrado.
+ */
 const endService = (number) => {
   // Lógica para encerrar o serviço
   console.log(`Serviço encerrado para ${number}`);

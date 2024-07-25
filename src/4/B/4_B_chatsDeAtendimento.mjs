@@ -1,7 +1,8 @@
-// src/B/4_B_chatsDeAtendimento.mjs
-
 export const chatOptionB = async (message, client) => {
-  const userId = message.from;
-  const responseText = 'Você escolheu a opção B em Chats. Aqui estão os detalhes...';
-  await client.sendText(userId, responseText);
+  try {
+    // Simulação de lógica para a opção B de chats de atendimento
+    await client.sendText(message.from, 'Você escolheu a opção B de chats de atendimento.');
+  } catch (error) {
+    console.error('Erro na opção B de chats de atendimento:', error);
+  }
 };

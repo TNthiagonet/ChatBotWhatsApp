@@ -1,8 +1,8 @@
-// src/A/2_A_institucionais.mjs
-
 export const instOptionA = async (message, client) => {
-  const userId = message.from;
-  // Lógica para a opção A do submenu Institucionais
-  const responseText = 'Você escolheu a opção A em Institucionais. Aqui estão os detalhes...';
-  await client.sendText(userId, responseText);
+  try {
+    // Simulação de lógica para a opção A de institucionais
+    await client.sendText(message.from, 'Você escolheu a opção A de institucionais.');
+  } catch (error) {
+    console.error('Erro na opção A de institucionais:', error);
+  }
 };

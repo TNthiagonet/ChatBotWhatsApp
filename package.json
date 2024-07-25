@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "test": "vitest",
-    "postinstall": "npx puppeteer install",
-    "check-chrome": "npx puppeteer --version"
+    "postinstall": "npx playwright install",
+    "check-chrome": "npx playwright --version",
+    "playwright": "node playwright.js"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +17,14 @@
     "@wppconnect-team/wppconnect": "^1.32.4",
     "chrome-aws-lambda": "^9.1.0",
     "express": "^4.17.1",
-    "puppeteer": "^22.13.1",
-    "puppeteer-core": "^9.1.1",
+    "idna-uts46": "^1.1.0",
+    "playwright": "^1.45.3",
     "sharp": "^0.33.4",
     "winston": "^3.13.1",
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
+    "npm-force-resolutions": "^0.0.10",
     "vitest": "^2.0.4"
   },
   "engines": {

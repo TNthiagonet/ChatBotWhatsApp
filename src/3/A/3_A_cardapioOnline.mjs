@@ -1,7 +1,8 @@
-// src/A/3_A_cardapioOnline.mjs
-
 export const cardOptionA = async (message, client) => {
-  const userId = message.from;
-  const responseText = 'Você escolheu a opção A em Cardápio. Aqui estão os detalhes...';
-  await client.sendText(userId, responseText);
+  try {
+    // Simulação de lógica para a opção A de cardápio online
+    await client.sendText(message.from, 'Você escolheu a opção A do cardápio online.');
+  } catch (error) {
+    console.error('Erro na opção A de cardápio online:', error);
+  }
 };

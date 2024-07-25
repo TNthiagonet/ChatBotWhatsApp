@@ -1,7 +1,8 @@
-// src/C/1_C_landpages.mjs
-
 export const landOptionC = async (message, client) => {
-  const userId = message.from;
-  const responseText = 'Você escolheu a opção C em Land Pages. Para contratar nossos serviços...';
-  await client.sendText(userId, responseText);
+  try {
+    // Simulação de lógica para a opção C de landpages
+    await client.sendText(message.from, 'Você escolheu a opção C de landpages.');
+  } catch (error) {
+    console.error('Erro na opção C de landpages:', error);
+  }
 };
